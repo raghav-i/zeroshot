@@ -182,7 +182,7 @@ class OptimizedZeroShotDetector:
                     return [{
                         "label": "Loading new categories...",
                         "confidence": 1.0,
-                        "bbox": [0, 0, frame.shape[1], frame.shape[0]]
+
                     }]
 
             image_input = self._async_preprocess(frame)
@@ -203,7 +203,7 @@ class OptimizedZeroShotDetector:
                 {
                     "label": categories[idx],
                     "confidence": float(value),
-                    "bbox": [0, 0, frame.shape[1], frame.shape[0]]
+
                 }
                 for value, idx in zip(values, indices)
                 if value.item() > CONFIG["threshold"]
